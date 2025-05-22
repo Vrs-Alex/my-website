@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .gallery-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .gallery-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-nav {
+            margin: 15px 0;
+        }
+        
+        .gallery-nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .gallery-nav button:hover {
+            background-color: #45a049;
+        }
+        
+        .gallery-nav button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .image-counter {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            opacity: 0.7;
+            transition: opacity 0.3s, border-color 0.3s;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+            border-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Галерея изображений</h1>
+    
+    <div class="gallery-container">
+        <img id="current-image" class="gallery-image" src="" alt="Галерея изображений">
+        
+        <div class="image-counter">
+            <span id="current-index">1</span> из <span id="total-images">0</span>
+        </div>
+        
+        <div class="gallery-nav">
+            <button id="prev-btn" disabled>Назад</button>
+            <button id="next-btn" disabled>Вперед</button>
+        </div>
+        
+        <div class="thumbnail-container" id="thumbnails">
+            <!-- Миниатюры будут добавлены через JavaScript -->
+        </div>
+    </div>
+    
+    <script src = "../scripts/gallery.js">
+         
+    </script>
+</body>
+</html>
